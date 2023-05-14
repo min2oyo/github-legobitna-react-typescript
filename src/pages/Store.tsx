@@ -1,5 +1,5 @@
 import React from 'react';
-import { Address, Restaurant } from './model/restaurant';
+import { Address, Restaurant } from '../model/restaurant';
 
 interface OwnProps {
   info: Restaurant;

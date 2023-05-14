@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Address, Restaurant } from './model/restaurant';
-import Store from './Store';
-import BestMenu from './BestMenu';
-import './App.css';
+import Store from './pages/Store';
+import BestMenu from './pages/BestMenu';
 
 const App: React.FC = () => {
 

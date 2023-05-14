@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu } from './model/restaurant';
+import { Menu } from '../model/restaurant';
 
 type OwnProps = Omit<Menu, `price`> & {  // type
   showBestMenuName(name: string): string;
