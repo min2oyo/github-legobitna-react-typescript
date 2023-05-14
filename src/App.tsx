@@ -1,35 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Address, Restaurant } from './model/restaurant';
 import Store from './Store';
 import BestMenu from './BestMenu';
-import { Address, Restaurant } from './model/restaurant';
 import './App.css';
-
-let data: Restaurant = {
-  name: `누나네 식당`,
-  category: `western`,
-  address: {
-    city: `incheon`,
-    detail: `somewhere`,
-    zipCode: 23425634
-  },
-  menu: [
-    {
-      name: "rose pasta",
-      price: 2000,
-      category: 'PASTA'
-    },
-    {
-      name: 'garlic steak',
-      price: 3000,
-      category: `PASTA`
-    }
-  ]
-};
 
 const App: React.FC = () => {
 
   // 변수
-  const [myRestaurant, setMyRestaurant] = useState<Restaurant>(data);
+  const [myRestaurant, setMyRestaurant] = useState<Restaurant>({
+    name: ``,
+    category: ``,
+    address: {
+      city: ``,
+      detail: ``,
+      zipCode: 0
+    },
+    menu: [],
+  });
 
   // 함수
   const changeAddress = (address: Address) => {
@@ -40,6 +27,13 @@ const App: React.FC = () => {
   const showBestMenuName = (name: string) => {
     return name;
   };
+
+  // 이펙
+  useEffect(() => {
+    fetch(`/data/restaurant.json`)
+      .then(res => res.json())
+      .then(res => setMyRestaurant(res));
+  });
 
   // 렌더
   return (
