@@ -32,7 +32,7 @@ const App: React.FC = () => {
     fetch(`/data/restaurant.json`)
       .then(res => res.json())
       .then(res => setMyRestaurant(res));
-  });
+  }, []);
 
   // 렌더
   return (

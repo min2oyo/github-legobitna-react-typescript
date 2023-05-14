@@ -10,6 +10,8 @@ type OwnProps = Omit<Menu, `price`> & {  // type
 // }
 
 const BestMenu: React.FC<OwnProps> = ({ name, category, showBestMenuName }) => {
+
+  // 렌더
   return (
     <div>{name}</div>
   );

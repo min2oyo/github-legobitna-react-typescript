@@ -7,6 +7,8 @@ interface OwnProps {
 }
 
 const Store: React.FC<OwnProps> = ({ info: { name } }) => {
+
+  // 렌더
   return (
     <div>{name}</div>
   );
